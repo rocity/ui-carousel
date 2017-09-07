@@ -595,6 +595,17 @@ angular.module('ui.carousel.controllers')
       this.refreshCarousel();
     });
 
+    $scope.$watchCollection('ctrl.show', n => {
+      this.options.slidesToShow = n;
+
+      if (!n) {
+        return;
+      }
+
+      this.setupInfinite();
+      this.refreshCarousel();
+    });
+
     /**
      * update when resize
      *

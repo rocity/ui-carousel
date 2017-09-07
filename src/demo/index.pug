@@ -63,9 +63,13 @@ html(ng-app="App")
           .divider
           .content-box
             h2.title Multiple Item
+            button.btn.btn-default(ng-click='DemoCtrl.onToShowChange(1)') To Show: 1
+            button.btn.btn-default(ng-click='DemoCtrl.onToShowChange(3)') To Show: 3
+            p Showing:&nbsp;
+              strong {{ DemoCtrl.multipleToShow }}
             ui-carousel(
               slides="DemoCtrl.multiple.slides",
-              slides-to-show="3",
+              slides-to-show="DemoCtrl.multipleToShow",
               slides-to-scroll="3",
               dots="true"
             )
