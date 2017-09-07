@@ -99,6 +99,12 @@ app.controller('CarouselDemoCtrl', ['$scope', 'Carousel', function($scope, Carou
     '  </carousel-next>\n' +
     '</ui-carousel>'
   ;
+
+  this.multipleToShow = 3
+
+  this.onToShowChange = (n) => {
+    this.multipleToShow = n;
+  }
 }]);
 
 app.directive('prism', [function() {
